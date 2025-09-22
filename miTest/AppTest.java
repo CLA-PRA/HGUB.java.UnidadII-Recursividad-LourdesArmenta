@@ -45,6 +45,26 @@ class AppTest {
         assertEquals(-1, BusquedaBinaria.busquedaBinaria_iterativa(arreglo, 20));
     }
     @Test
+    public void testBusquedaBinariaRecursiva(){
+        int[] arreglo = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+
+        // Prueba con un valor que está en el arreglo
+        assertEquals(4, BusquedaBinaria.busquedaBinaria_recursiva(arreglo, 9, 0, arreglo.length - 1));
+
+        // Prueba con un valor que no está en el arreglo
+        assertEquals(-1, BusquedaBinaria.busquedaBinaria_recursiva(arreglo, 8, 0, arreglo.length - 1));
+
+        // Prueba con el primer valor del arreglo
+        assertEquals(0, BusquedaBinaria.busquedaBinaria_recursiva(arreglo, 1, 0, arreglo.length - 1));
+
+        // Prueba con el último valor del arreglo
+        assertEquals(9, BusquedaBinaria.busquedaBinaria_recursiva(arreglo, 19, 0, arreglo.length - 1));
+
+        // Prueba con un valor fuera del rango del arreglo
+        assertEquals(-1, BusquedaBinaria.busquedaBinaria_recursiva(arreglo, 20, 0, arreglo.length - 1));
+
+    }
+    @Test
     public void testFactorialIterativo() {
         assertEquals(1, Factorial.factorial_iterativo(0));
         assertEquals(1, Factorial.factorial_iterativo(1));
